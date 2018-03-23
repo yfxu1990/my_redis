@@ -115,7 +115,7 @@ int main1(int argc, char *argv[]){
 }
 int s_shm_id = -1;
 
-int main(int argc, char *argv[]){
+int proc_testmain(int argc, char *argv[]){
     pid_t pid;
     int shm_id =             create_shmt(SHMT_MAX_SIZE, 600);;
     if((pid = fork()) < 0)

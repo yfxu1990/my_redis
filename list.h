@@ -9,36 +9,19 @@ typedef struct node_s{
 }node_t, head_t;
 
 /**/
-void init_list(head_t *h){
-    h->data = UNVALIDE_DATA;
-    h->next = NULL;
-}
+void init_list(head_t *h);
 
-void list_append(head_t *h, node_t *d){
-    head_t *tmp = h;
-    while (tmp->next){
-        tmp = tmp->next;
-    }
-    tmp->next = d;
-    d->next = NULL;  
-}
+void list_append(head_t *h, node_t *d);
+/*头插*/
+void list_front(head_t *h, node_t *d);
 
-void list_front(head_t *h, node_t *d){
-    d->next = h->next;
-    h->next = d;
-}
+/*列表的大小*/
+int list_size(head_t *h);
 
-int list_size(head_t *h){
-    head_t *tmp = h;
-    int i = 0;
-    while(tmp->next){
-        ++i;
-        tmp = tmp->next;
-    }
-    return i;
-}
+void list_del(head_t *h, node_t *d);
+void destroy_list(head_t *h);
 
-void list_del(head_t *h, node_t *d){
-    
-}
+void* alloc_node();
+void free_node();
+
 #endif//_LIST_H
