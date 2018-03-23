@@ -1,0 +1,23 @@
+#include "redis.h"
+#include "stdlib.h"
+#include <stdio.h>
+#include <unistd.h>
+
+    
+
+
+int main(int argc, char * argv []){
+    char buff[2048] = {0};
+    char * promat = "127.0.0.1:6379>";
+    //daemon(0, 0);
+    while(1){
+    printf("%s",promat);
+    while(1){
+        if(fgets(buff, 2048, stdin) !=NULL)
+            {printf("%s",buff);
+            break;
+        }
+        }
+    }
+return 0;
+}
